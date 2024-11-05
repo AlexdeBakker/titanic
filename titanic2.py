@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 # Laad de dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv(r"C:\Users\alexd\Downloads\Titanic\train.csv")  # Update dit pad indien nodig
+    return pd.read_csv("train.csv")  # Update dit pad indien nodig
 
 # Toon de ruwe data
 data = load_data()
