@@ -27,26 +27,26 @@ data['Title'] = data['Name'].str.extract(' ([A-Za-z]+)\.', expand=False)
 st.write('## Schoongemaakte Dataset')
 st.write(data.head(10))
 
-# EDA: Overleving per Klasse
-st.write('## EDA: Overleving per Klasse')
+# Overleving per Klasse
+st.write('## Overleving per Klasse')
 fig, ax = plt.subplots()
 sns.countplot(data=data, x='Pclass', hue='Survived', ax=ax)
 st.pyplot(fig)
 
-# EDA: Overleving per Geslacht
-st.write('## EDA: Overleving per Geslacht')
+# Overleving per Geslacht
+st.write('## Overleving per Geslacht')
 fig, ax = plt.subplots()
 sns.countplot(data=data, x='Sex', hue='Survived', ax=ax)
 st.pyplot(fig)
 
-# EDA: Leeftijdsverdeling per Overleving
-st.write('## EDA: Leeftijdsverdeling per Overleving')
+# Leeftijdsverdeling per Overleving
+st.write('## Leeftijdsverdeling per Overleving')
 fig, ax = plt.subplots()
 sns.histplot(data=data, x='Age', hue='Survived', multiple='stack', kde=True, ax=ax)
 st.pyplot(fig)
 
-# EDA: Boxplot van Tarief
-st.write('## EDA: Boxplot van Tarief')
+# Boxplot van Tarief
+st.write('## Boxplot van Tarief')
 fig, ax = plt.subplots()
 ax.boxplot([data["Fare"]])
 ax.set_xticklabels(["Passagiers"])
@@ -55,7 +55,7 @@ plt.title("Boxplot van Tarief")
 st.pyplot(fig)
 
 # Plot 1: Boxplot van Tarief per Klasse
-st.write('## EDA: Tariefverdeling per Klasse')
+st.write('## Tariefverdeling per Klasse')
 fig, ax = plt.subplots(figsize=(8, 6))
 sns.boxplot(x='Pclass', y='Fare', data=data, ax=ax)
 plt.xlabel('Klas')
@@ -64,7 +64,7 @@ plt.title('Tariefverdeling per Klas')
 st.pyplot(fig)
 
 # Plot 2: Scatterplot van Leeftijd vs Tarief
-st.write('## EDA: Prijs per Kaartje per Leeftijd')
+st.write('## Prijs per Kaartje per Leeftijd')
 survived = data[data["Survived"] == 1]
 not_survived = data[data["Survived"] == 0]
 
