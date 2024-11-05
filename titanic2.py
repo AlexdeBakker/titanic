@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 # Laad de dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv('train.csv')  # Update dit pad indien nodig
+    return pd.read_csv(r"C:\Users\alexd\Downloads\Titanic\train.csv")  # Update dit pad indien nodig
 
 # Toon de ruwe data
 data = load_data()
@@ -128,13 +128,4 @@ if prediction == 1:
     st.write('Voorspelling: Overleefd')
 else:
     st.write('Voorspelling: Niet overleefd')
-
-# Visualiseer de overlevingspercentages per passagiersklasse
-st.write('## Overlevingspercentage per Passagiersklasse')
-survival_rate = data.groupby('Pclass')['Survived'].mean().reset_index()
-
-fig, ax = plt.subplots(figsize=(8, 5))
-sns.barplot(x='Pclass', y='Survived', data=survival_rate, ax=ax, palette='viridis')
-ax.set_ylabel('Overlevingspercentage')
-ax.set_title('Overlevingspercentage per Passagiersklasse')
-st.pyplot(fig)
+ 
